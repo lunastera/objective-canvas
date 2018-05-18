@@ -1,0 +1,19 @@
+{
+  "name": "canvas-wrapper",
+  "version": "1.0.0",
+  "description": "canvas wrapper",
+  "main": "dist/main.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sobreera/canvas-wrapper.git"
+  },
+  "author": "Arashi Uno",
+  "license": "MIT",
+  "private": true,
+  "dependencies": {
+    "babel-core": "^6.26.3",
+    "babel-loader": "^7.1.4",
+    "babel-preset-env": "^1.7.0",
+    "webpack": "^4.8.3"
+  }
+}
