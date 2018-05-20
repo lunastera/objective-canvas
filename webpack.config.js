@@ -1,12 +1,9 @@
-const MINIFY = process.env.MODE_MINIFY === '1';
-
 module.exports = {
-  context: __dirname + '/src',
   entry: {
-    canvas_wrapper: './index.js'
+    objective_canvas: './src/index.js'
   },
   output: {
-    filename: MINIFY ? '[name].min.js' : '[name].js',
+    filename: '[name].js',
     path: __dirname + '/dist',
     publicPath: '/'
   },
@@ -14,7 +11,8 @@ module.exports = {
     rules: [
       {
         test: /\.js$/,
-        use: 'babel-loader'
+        use: 'babel-loader',
+        exclued: /node_modules/
       }
     ]
   }
