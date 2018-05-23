@@ -1,11 +1,13 @@
-import { CanvasObjectArray } from "./canvas_object_array"
-import {CanvasObject, Circle} from "./canvas_object"
+import { CanvasObjectArray } from './canvas_object_array'
+import { CanvasObject, Circle } from './canvas_object'
 class ObjectiveCanvas {
   constructor(canvas) {
     this.canvas = /** @type {HTMLCanvasElement} */ (canvas)
     this.width = this.canvas.width
     this.height = this.canvas.height
-    this.context = /** @type {CanvasRenderringContext2D} */ canvas.getContext('2d')
+    this.context = /** @type {CanvasRenderringContext2D} */ canvas.getContext(
+      '2d'
+    )
     this.objects = new CanvasObjectArray()
     this.overlayObjects = new CanvasObjectArray()
   }
@@ -28,9 +30,7 @@ class ObjectiveCanvas {
   // 座標が一致するオブジェクトを取得。
   // return: Array[CanvasObject]
   attachObjects(x, y) {
-    return this.objects.search( e =>
-      e.x === x && e.y === y
-    )
+    return this.objects.search(e => e.x === x && e.y === y)
   }
 
   // 最も近い座標のオブジェクトを取得。
@@ -49,9 +49,4 @@ class ObjectiveCanvas {
   }
 }
 
-export {
-  ObjectiveCanvas, 
-  CanvasObjectArray,
-  CanvasObject,
-  Circle 
-}
+export { ObjectiveCanvas, CanvasObjectArray, CanvasObject, Circle }

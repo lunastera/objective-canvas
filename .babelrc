@@ -1,3 +1,28 @@
 {
-  "presets": ["env"]
+  "env": {
+    "development": {
+      "presets": [
+        [
+          "env",
+          {
+            "targets": {
+              "chrome": 61
+            }
+          }
+        ]
+      ],
+      "retainLines": true
+    },
+    "production": {
+      "presets": [
+        [
+          "env",
+          {
+            "modules": false
+          }
+        ]
+      ],
+      "retainLines": true
+    }
+  }
 }
