@@ -17,14 +17,22 @@ class ObjectiveCanvas {
     this.objects.push(object)
   }
 
+  addOverlay(object) {
+    this.overlayObjects.push(object)
+  }
+
   // Canvasからオブジェクトを削除
   remove(object) {
     this.objects.remove(object)
   }
 
+  removeOverlay(object) {
+    this.overlayObjects.remove(object)
+  }
+
   render() {
     this.objects.render(this.canvas, this.context)
-    // this.overlayObjects.render(this.canvas, this.context)
+    this.overlayObjects.render(this.canvas, this.context)
   }
 
   // 座標が一致するオブジェクトを取得。
@@ -44,8 +52,8 @@ class ObjectiveCanvas {
     this.context.clearRect(0, 0, this.canvas.width, this.canvas.height)
   }
 
-  clearRect(x, y, w, h) {
-    this.context.clearRect(x, y, w, h)
+  clearRect(x, y, width, height) {
+    this.context.clearRect(x, y, width, height)
   }
 }
 
