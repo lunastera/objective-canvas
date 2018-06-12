@@ -21,8 +21,7 @@ const libraryConfig = (env, argv) => {
       rules: [
         {
           test: /\.js$/,
-          use: 'babel-loader',
-          exclude: /node_modules/
+          use: 'babel-loader'
         }
       ]
     }
@@ -32,7 +31,7 @@ const libraryConfig = (env, argv) => {
 const appConfig = {
   name: 'app',
   entry: {
-    canvas: './test/canvas.1.js'
+    canvas: './test/canvas.2.js'
   },
   output: {
     filename: '[name].js',
@@ -44,16 +43,12 @@ const appConfig = {
         test: /\.js$/,
         use: 'babel-loader',
         exclude: /node_modules/
-      },
-      {
-        test: /\.html$/,
-        use: 'html-loader'
       }
     ]
   },
   plugins: [
     new HtmlWebpackPlugin({
-      template: './test/canvas03.html'
+      template: './test/canvas04.html'
     })
   ]
 }
