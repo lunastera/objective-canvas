@@ -10,9 +10,11 @@ class CanvasObject {
   update(canvas) {
     canvas
   }
+
   render(context) {
     context
   }
+
   isDead() {
     return false
   }

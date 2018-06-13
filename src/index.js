@@ -10,6 +10,7 @@ class ObjectiveCanvas {
     )
     this.objects = new CanvasObjectArray()
     this.overlayObjects = new CanvasObjectArray()
+    this.layeredObject = null
   }
 
   // Canvasに描画したいオブジェクトを追加
@@ -33,12 +34,9 @@ class ObjectiveCanvas {
   render() {
     this.objects.render(this.canvas, this.context)
     this.overlayObjects.render(this.canvas, this.context)
-  }
-
-  // 座標が一致するオブジェクトを取得。
-  // return: Array[CanvasObject]
-  attachObjects(x, y) {
-    return this.objects.search(e => e.x === x && e.y === y)
+    if (this.layeredObject !== null) {
+      this.layeredObject.render(this.context)
+    }
   }
 
   // 最も近い座標のオブジェクトを取得。
@@ -47,9 +45,11 @@ class ObjectiveCanvas {
     return this.objects.searchNearest(x, y)
   }
 
-  // Canvasの描画をクリア
+  // Canvasのオブジェクトをすべて削除
   clearAll() {
-    this.context.clearRect(0, 0, this.canvas.width, this.canvas.height)
+    this.objects = new CanvasObjectArray()
+    this.overlayObjects = new CanvasObjectArray()
+    this.layeredObject = null
   }
 
   clearRect(x, y, width, height) {
