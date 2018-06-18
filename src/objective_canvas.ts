@@ -40,7 +40,7 @@ export default class ObjectiveCanvas {
     this.objects.render(this.canvas, this.context)
   }
 
-  clearRect(x, y, width, height) {
+  clearRect(x: number, y: number, width: number, height: number) {
     this.context.clearRect(x, y, width, height)
   }
 }
